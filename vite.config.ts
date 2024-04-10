@@ -4,5 +4,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 
 export default defineConfig({
-  plugins: [remix({ ssr: false }), netlifyPlugin(), tsconfigPaths()],
+  plugins: [
+    remix({ buildDirectory: "dist" }),
+    netlifyPlugin(),
+    tsconfigPaths(),
+  ],
 });
